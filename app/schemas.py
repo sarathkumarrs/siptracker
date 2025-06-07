@@ -26,7 +26,7 @@ class SipPlanCreate(SipPlanBase):
 
 class SipPlanResponse(SipPlanBase):
     id: int
-    owner_id: int # The ID of the user who owns this SIP
+    owner_id: str # The ID of the user who owns this SIP
 
     class Config:
         from_attributes = True

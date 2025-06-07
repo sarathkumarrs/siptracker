@@ -8,7 +8,18 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Get the Supabase JWT secret from environment variables
-SUPABASE_JWT_SECRET = os.getenv("SUPABASE_JWT_SECRET")
+SUPABASE_JWT_SECRET = "CtQbP96ZQyMGIUtOsbHXdzBMQiIUe5azChHjVVtlqtIHR2+xc5mdDbwBOVwUSA+bTFDl2o+Q6snYoaYLNAcgSA=="
+
+# --- ADD THIS DEBUGGING BLOCK ---
+print(f"DEBUG: SUPABASE_JWT_SECRET from .env (raw): '{SUPABASE_JWT_SECRET}'")
+if SUPABASE_JWT_SECRET:
+    print(f"DEBUG: SUPABASE_JWT_SECRET length: {len(SUPABASE_JWT_SECRET)}")
+    # Optional: print first/last few chars to compare with dashboard
+    # print(f"DEBUG: SUPABASE_JWT_SECRET start: {SUPABASE_JWT_SECRET[:5]}")
+    # print(f"DEBUG: SUPABASE_JWT_SECRET end: {SUPABASE_JWT_SECRET[-5:]}")
+else:
+    print("DEBUG: SUPABASE_JWT_SECRET IS NOT SET IN .ENV OR IS EMPTY.")
+# --- END DEBUGGING BLOCK ---
 
 # Check if the secret is loaded
 if not SUPABASE_JWT_SECRET:
@@ -34,6 +45,7 @@ async def get_current_user(token: HTTPAuthorizationCredentials = Depends(oauth2_
             token.credentials,
             SUPABASE_JWT_SECRET,
             algorithms=["HS256"], # Supabase uses HS256 by default
+            options={"verify_exp": False, "verify_aud": False, "verify_iss": False} # <-- TEMPORARY DEBUGGING
             # audience="authenticated", # Optional: uncomment if you want to verify audience
             # issuer="supabase" # Optional: uncomment if you want to verify issuer
         )

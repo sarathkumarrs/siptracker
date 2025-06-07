@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP Tracker Login & Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SIP Tracker Test Client</h1>
+
+        <section id="auth-section">
+            <h2>1. User Authentication</h2>
+            <p>Sign in with your Supabase credentials (email/password).</p>
+            <input type="email" id="email" placeholder="Email" value="test@example.com">
+            <input type="password" id="password" placeholder="Password" value="securepassword">
+            <button id="signInBtn">Sign In</button>
+            <p id="authStatus"></p>
+            <p>Your JWT: <span id="jwtToken">No Token Yet</span></p>
+            <p>User ID: <span id="userId">N/A</span></p>
+        </section>
+
+        <section id="api-test-section" style="display: none;">
+            <h2>2. Test FastAPI API</h2>
+            <h3>Create SIP Plan (POST /sips/)</h3>
+            <label for="schemeName">Scheme Name:</label>
+            <input type="text" id="schemeName" value="SBI Nifty 50 Index Fund">
+            <label for="monthlyAmount">Monthly Amount:</label>
+            <input type="number" id="monthlyAmount" value="1000">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" value="2024-01-01">
+            <button id="createSipBtn">Create SIP</button>
+            <p id="createSipStatus"></p>
+
+            <h3>Get SIP Summary (GET /sips/summary)</h3>
+            <button id="getSummaryBtn">Get Summary</button>
+            <pre id="summaryOutput"></pre>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
