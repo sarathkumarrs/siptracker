@@ -111,10 +111,10 @@ Follow these steps to get the project running on your local machine.
 
     ```dotenv
     # sip_tracker/.env
-    DATABASE_URL="postgresql://postgres:lwB7utgFw58pa99S@db.hpybjnvodvjmpuqmoigg.supabase.co:5432/postgres"
-    SUPABASE_JWT_SECRET=CtQbP96ZQyMGIUtOsbHXdzBMQiIUe5azChHjVVtlqtIHR2+xc5mdDbwBOVwUSA+bTFDl2o+Q6snYoaYLNAcgSA==
-    SUPABASE_URL="[https://hpybjnvodvjmpuqmoigg.supabase.co](https://hpybjnvodvjmpuqmoigg.supabase.co)"
-    SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhweWJqbnZvZHZqbXB1cW1vaWdnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkzMDI0NDMsImV4cCI6MjA2NDg3ODQ0M30.IVhddREMaSwSRs_LgBS2OEpOX1YbAVWvrd1T6L3lbE8"
+    DATABASE_URL=""
+    SUPABASE_JWT_SECRET=""
+    SUPABASE_URL=""
+    SUPABASE_ANON_KEY=""
     ```
     **Important**: Replace the example values above with your *actual* Supabase project credentials.
 
