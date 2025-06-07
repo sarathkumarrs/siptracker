@@ -295,18 +295,7 @@ Once both backend and frontend are running, you can interact with the applicatio
 10. **User Profile Sync**: Before performing database operations (e.g., creating a SIP), `get_or_create_user_profile()` ensures a corresponding profile record exists in the backend's `public.users` table for this `current_user_id` (UUID). This prevents foreign key violations.
 11. **Database Operation**: The backend proceeds to perform the requested database operation (e.g., creating a SIP plan, linked by `owner_id` to the `public.users` table record).
 
-### 7.4. Data Flow
 
-* **Client to Backend**: Pydantic models (e.g., `SipPlanCreate`) ensure strict validation of incoming request data.
-* **Backend to Database**: SQLAlchemy ORM models (`models.User`, `models.SIP`) abstract direct SQL queries, ensuring data consistency and type mapping.
-* **Database to Backend**: SQLAlchemy retrieves data from PostgreSQL, which is then mapped back to ORM models.
-* **Backend to Client**: Pydantic response models (e.g., `SipPlanResponse`, `SipSummary`) serialize Python objects into JSON and ensure the response structure is consistent and validated before sending to the frontend.
-
----
-
-## 8. System Design Considerations (Scalability)
-
-* For detailed system design considerations regarding scalability to 10 million users, real-time NAVs, analytics, caching, background tasks, security, multi-tenancy, and microservices, please refer to the separate `design.md` or `.pdf` document.
 
 ---
 
