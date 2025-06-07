@@ -134,8 +134,8 @@ Follow these steps to get the project running on your local machine.
 
     ```dotenv
     # sip_tracker/frontend/.env
-    VITE_SUPABASE_URL=[https://hpybjbnvodvjmpuqmoigg.supabase.co](https://hpybjbnvodvjmpuqmoigg.supabase.co)
-    VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhweWJqbnZvZHZqbXB1cW1vaWdnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkzMDI0NDMsImV4cCI6MjA2NDg3ODQ0M30.IVhddREMaSwSRs_LgBS2OEpOX1YbAVWvrd1T6L3lbE8
+    VITE_SUPABASE_URL=
+    VITE_SUPABASE_ANON_KEY=
     ```
     **Important**: Replace the example values above with your *actual* Supabase project URL and Anon Key.
 
